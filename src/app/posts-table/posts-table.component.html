@@ -2,26 +2,18 @@
 	<thead>
 		<tr>
 			<th scope="col">#</th>
-			<th scope="col">Country</th>
-			<th scope="col">Area</th>
-			<th scope="col">Population</th>
+			<th scope="col">UserId</th>
+			<th scope="col">Title</th>
+			<th scope="col">Body</th>
 		</tr>
 	</thead>
 	<tbody>
-		@for (country of countries; track country.name) {
+		@for (post of posts; track post.id) {
 			<tr>
-				<th scope="row">{{ country.id }}</th>
-				<td>
-					<img
-						[src]="'https://upload.wikimedia.org/wikipedia/commons/' + country.flag"
-						[alt]="'The flag of ' + country.name"
-						class="me-2"
-						style="width: 20px"
-					/>
-					{{ country.name }}
-				</td>
-				<td>{{ country.area | number }}</td>
-				<td>{{ country.population | number }}</td>
+				<th scope="row">{{ post.id | number}}</th>
+				<td>{{ post.userId | number }}</td>
+				<td>{{ post.title }}</td>
+				<td>{{ post.body }}</td>
 			</tr>
 		}
 	</tbody>
@@ -32,13 +24,14 @@
 		[collectionSize]="collectionSize"
 		[(page)]="page"
 		[pageSize]="pageSize"
-		(pageChange)="refreshCountries()"
+		(pageChange)="refreshPosts()"
 	>
 	</ngb-pagination>
 
-	<select class="form-select" style="width: auto" [(ngModel)]="pageSize" (ngModelChange)="refreshCountries()">
-		<option [ngValue]="2">2 items per page</option>
-		<option [ngValue]="4">4 items per page</option>
-		<option [ngValue]="6">6 items per page</option>
+	<select class="form-select" style="width: auto" [(ngModel)]="pageSize" (ngModelChange)="refreshPosts()">
+		<option [ngValue]="5">5 items per page</option>
+		<option [ngValue]="10">10 items per page</option>
+		<option [ngValue]="20">20 items per page</option>
+		<option [ngValue]="50">50 items per page</option>
 	</select>
 </div>

@@ -14,4 +14,5 @@ export class PostServiceService {
   GetPosts(): Observable<any[]> {
     return this.http.get<any[]>(this.apiUrl);
   }
+  
 }
