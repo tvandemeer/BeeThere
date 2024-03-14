@@ -1,10 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { PlaceholderService } from '../services/placeholder.service';
+import { InfoCollapseComponent } from '../info-collapse/info-collapse.component';
 
 @Component({
   selector: 'app-leerpad',
   standalone: true,
-  imports: [],
+  imports: [InfoCollapseComponent],
   templateUrl: './leerpad.component.html',
   styleUrl: './leerpad.component.css'
 })
