@@ -19,6 +19,10 @@ export class LeerpadComponent implements OnInit {
     this.placeholderService.GetPosts()
       .subscribe((response) => {
         this.leerpaden = response.slice(0,8);
+        for (let i = 0; i < this.leerpaden.length; i++) {
+          let picAlign = i % 2 == 0 ? "left" : "right";
+          this.leerpaden[i].picAlign = picAlign;
+        }
     });
   }
 }
