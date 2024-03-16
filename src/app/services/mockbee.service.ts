@@ -27,4 +27,12 @@ export class MockbeeService {
     return this.http.get<Resource[]>('https://7og1o.wiremockapi.cloud/resources');
   }
 
+  GetModules(): Observable<any[]> {
+    return this.http.get<any[]>('https://7og1o.wiremockapi.cloud/modules');
+  }
+
+  GetPathModules(id: number): Observable<any[]> {
+    return this.http.get<any[]>(`https://7og1o.wiremockapi.cloud/path/${id}/modules`);
+  }
+
 }

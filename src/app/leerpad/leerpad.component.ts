@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { PlaceholderService } from '../services/placeholder.service';
 import { MockbeeService } from '../services/mockbee.service';
 import { RouterModule } from '@angular/router';
 import { Path } from '../models/Path';
@@ -16,7 +15,7 @@ export class LeerpadComponent implements OnInit {
 
   public leerpaden: Path[] = [];
 
-  constructor(private placeholderService: PlaceholderService, private mockbeeService: MockbeeService) {}
+  constructor(private mockbeeService: MockbeeService) {}
 
   ngOnInit(): void {
 
