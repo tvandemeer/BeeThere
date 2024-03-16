@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MockbeeService } from '../services/mockbee.service';
 import { Resource } from '../models/Resource';
-import { DecimalPipe } from '@angular/common';
+import { DecimalPipe, Location } from '@angular/common';
 
 @Component({
   selector: 'app-resources-list',
@@ -14,11 +14,15 @@ export class ResourcesListComponent implements OnInit {
 
   resources: Resource[] = [];
 
-  constructor(private mockbeeService: MockbeeService) {}
+  constructor(private mockbeeService: MockbeeService, private location: Location) {}
 
   ngOnInit(): void {
     this.mockbeeService.GetResources()
       .subscribe(response => this.resources = response);
+  }
+
+  backClicked() {
+    this.location.back();
   }
 
 }
