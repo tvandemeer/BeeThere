@@ -1,43 +1,9 @@
 <div class="container-fluid">
     <div class="row">
-        @for (pad of leerpaden; track pad.id) {
-        <div class="col-sm-auto">
-            <div class="card m-3" style="max-width: 540px;">
-                <div class="row g-0">
-                    @if (pad.picAlign == "left") {
-                    <div class="col-md-4">
-                        <img src="https://placehold.co/300x300" class="img-fluid rounded-start" alt="placeholder image">
-                    </div>
-                    }
-                    @else {
-                    <div class="col-md-8">
-                        <div class="card-body">
-                            <h5 class="card-title">{{ pad.title }}</h5>
-                            <p class="card-text">{{ pad.body }}</p>
-                            <button type="button" class="btn btn-primary">Ga naar de module&nbsp;<i
-                                    class="bi bi-arrow-right-square"></i></button>
-                        </div>
-                    </div>
-                    }
-
-                    @if (pad.picAlign == "left") {
-                    <div class="col-md-8">
-                        <div class="card-body">
-                            <h5 class="card-title">{{ pad.title }}</h5>
-                            <p class="card-text">{{ pad.body }}</p>
-                            <button type="button" class="btn btn-primary">Ga naar de module&nbsp;<i
-                                    class="bi bi-arrow-right-square"></i></button>
-                        </div>
-                    </div>
-                    }
-                    @else {
-                    <div class="col-md-4">
-                        <img src="https://placehold.co/300x300" class="img-fluid rounded-start" alt="placeholder image">
-                    </div>
-                    }
-                </div>
-            </div>
+    @for (path of leerpaden; track path.id) {
+        <div class="col-sm-6 col-lg-4">
+        <app-path-card [path]="path"></app-path-card>
         </div>
-        }
+    }
     </div>
 </div>

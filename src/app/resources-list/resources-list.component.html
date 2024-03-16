@@ -1,0 +1,30 @@
+<div class="container">
+    <div class="row">
+        <div class="col-sm">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Titel</th>
+                        <th scope="col">Omschrijving</th>
+                        <th scope="col">Uri</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @for (r of resources; track r.id) {
+                        <tr>
+                            <td>{{ r.id | number }}</td>
+                            <td>{{ r.title }}</td>
+                            <td>{{ r.description }}</td>
+                            <td>
+                                <a href="{{ r.uri }}">
+                                    <button type="button" class="btn btn-info">Link naar resource</button>
+                                </a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
