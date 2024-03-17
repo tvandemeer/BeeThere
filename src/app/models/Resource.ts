@@ -3,4 +3,5 @@ export class Resource {
     title: string = '';
     description: string = '';
     uri: string = '';
+    type: string = '';
 }
