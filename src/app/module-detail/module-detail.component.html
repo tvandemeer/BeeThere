@@ -1,1 +1,15 @@
-<p>module-detail works!</p>
+<div class="mt-4 p-5 bg-primary text-white bg-gradient">
+    <div class="row">
+        <div class="col-md-6">
+            <h1>{{module.title}}</h1>
+            <a href="{{module.uri}}">
+                <button type="button" class="btn btn-light mt-4">Lees meer...</button>
+            </a>
+        </div>
+        <div class="col-md-6">
+            <p>{{module.description}}</p>
+        </div>   
+    </div>
+</div>
+
+<button (click)="backClicked()" type="button" class="btn btn-light mt-3"><i class="bi bi-arrow-left"></i>&nbsp;Ga terug</button>
