@@ -23,6 +23,10 @@ export class MockbeeService {
     return this.http.get<Path>('https://7og1o.wiremockapi.cloud/path/' + pathId);
   }
 
+  GetModule(modId: number): Observable<any> {
+    return this.http.get<any>(`https://7og1o.wiremockapi.cloud/module/${modId}`);
+  }
+
   GetResources(): Observable<Resource[]> {
     return this.http.get<Resource[]>('https://7og1o.wiremockapi.cloud/resources');
   }
