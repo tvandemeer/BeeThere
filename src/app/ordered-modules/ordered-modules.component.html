@@ -1,0 +1,11 @@
+<div class="container">
+    <h1>ordered-modules works!</h1>
+    <h3>{{moduleorder}}</h3>
+
+    @for (mod of orderedmodules; track mod.id) {
+    <div class="p-2 mb-4 border shadow">
+        <p>ID: {{mod.id}}</p>
+        <p>Name: {{mod.name}}</p>
+    </div>
+    }
+</div>
